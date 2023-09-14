@@ -1,38 +1,341 @@
-.App {
-  text-align: center;
+/* Resetea todos los elementos. Le quita el padding, el margen y el box-sizing: border-box 
+hace que el margin y el padding no ocupen espacio. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* El en root creo variables globales con los colores que voy a utilizar. */
+:root {
+  --instagram: #d70bc6;
+  --facebook: #3b5999;
+  --github: #0c0d0d;
+  --linkedIn: #035b8a;
+  --rosefoot: #f8aca3;
+  --background: #908a8a;
+  --green: #aae6d9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Añado color de fondo y el estilo de fuente. */
+body {
+  background-color: var(--background);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Añado estructura al header, le aplico color de fondo un pequeño padding 
+y le aplico los bordes inferiores un estilo redondeado. */
+header {
+  align-items: center;
+  background-color: var(--rosefoot);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 80px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Le doy grosor a la fuente del título y un pequeño margen abajo 
+para que no quede muy pegado al subtítulo. */
+h1 {
+  font-weight: 400;
+  padding-bottom: .5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Añado estructura al main del css. */
+main {
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Aplico al contenedor de instrucciones un tamaño de fuente, color, estilo cursivo 
+y ancho, donde agrego color al borde a la fuente y un margen inferior y superior. */
+.instrucciones {
+  color: var(--rosefoot);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+  -webkit-text-stroke: .8px #0c0d0d;
+}
+
+/* Añado estilos al marcador poniendo un color de fondo verde, 
+márgenes y un efecto de borde redondeado */
+.marcador {
+  align-items: center;
+  background-color: var(--green);
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+
+  display: flex;
+  position: relative;
+
+}
+
+/* Ubico el nombre del jugador a la izquierda del marcador y 
+le doy estilo al borde en color rosa y redondeado. */
+.nombre {
+  border: 2px solid var(--rosefoot);
+  border-radius: 0.5rem;
+  line-height: 1;
+  padding: 0.5rem;
+
+  position: absolute;
+
+}
+
+/* Aplico un margen para que el nombre del jugador 
+quede a la derecha del tablero de puntos. */
+.nombre-jugador {
+  right: 105%;
+}
+
+/* Aplico un margen para que el nombre de la pc quede 
+a la izquierda del tablero de puntos. */
+.nombre-pc {
+  left: 105%;
+}
+
+/* Agranda el tamaño de la fuente del marcador de puntos. */
+.puntos {
+  font-size: 2rem;
+}
+
+/* Doy estructura al campo de batalla del juego, alineo el 
+contenido al centro y aplico un borde de color redondeado. */
+.campo-batalla {
+  align-items: center;
+  border: 2px solid var(--rosefoot);
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  padding: 5px;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Aplica un pequeño margen para el area del campo de batalla. */
+.ataque {
+  margin: 25px;
+}
+
+.img-ataque {
+  border-radius: 3rem;
+  transition: transform 0.3s ease-in-out; /* Agrega una transición suave a la propiedad transform */
+}
+
+/* Aplica tamaño de fuente, grosor, margen y centra el título de opciones. */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+/* Da estrucutura a la sección de opciones del juego. */
+.opciones-juego {
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Añade tamaño de fuente, color de fondo, borde redondeado, un pequeño margen. */
+.opcion {
+  background-color: var(--rosefoot);
+  border: 0;
+  border-radius: 1rem;
+  font-size: 1rem;
+  padding: .3rem;
+}
+
+/*Agrega animación sobre los botones de elecciones cuando se pasa el cursor sobre ellos, 
+haciendo que cambie su forma a redonda, con un borde color verde y que giren 360 grados. 
+También transforma el cursor en una manito cuando se pose en cada opción.*/
+.opcion:hover {
+  border: 5px solid var(--green);
+  border-radius: 3rem;
+  block-size: 5rem;
+  cursor: pointer;
+  inline-size: 5rem;
+  padding: .2rem;
+  transition: rotate 2s;
+  rotate: 360deg;
+}
+
+/* Agrego tamaño de fuente y centro el contenido del mensaje sobre el resultado 
+de cada ronda. También añado un borde de color redondeado. */
+.mensaje {
+  font-size: 20px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* Añade color a la opción elegida. */
+.mensaje .eleccion {
+  color: var(--rosefoot);
+}
+
+#gana-punto {
+  color: var(--green);
+  font-size: x-large;
+  margin-top: 1rem;
+}
+
+/* Añade estilos al botón de reinicio del juego, con color de fondo, 
+márgenes, borde redondeado, tamaño de la fuente y cambio de estilo de cursor. */
+.btn {
+  border: 0;
+  line-height: 1;
+  background-color: var(--rosefoot);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn:hover {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .2);
+  font-size: larger;
+  background-color: var(--green);
+  transition: 300ms;
+}
+
+/*Sirve para ocultar elementos desde js.*/
+.disabled {
+  display: none;
+}
+
+
+/* Añado color de fondo y centro el texto del contenedor address. */
+address {
+  background-color: var(--rosefoot);
+  padding-bottom: 15px;
+  padding-top: 20px;
+  text-align: center;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+/* Alinea los iconos y el contenido en el centro. */
+.redes_container .copyright {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+/* Modifica los elementos li separándolos de forma horizontal,
+con márgenes de distancia entre ellos y alineándolos al centro (al elemento a). */
+.redes_container ul li {
+  display: inline-block;
+  height: 50px;
+  margin: 0 5px;
+  text-align: center;
+  width: 50px;
+}
+
+/* Estilización de los elementos a. Le da a cada ícono, el color gris con fondo blanco
+con una sobra difuminada con una velocidad de transición, bordes redondeados y los alinea. */
+.redes_container ul li a {
+  background: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 0px rgba(0, 0, 0, .2);
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 8px 5px 0;
+  transition: .2s;
+}
+
+/* Hace que al pasar el cursor sobre los íconos de redes sociales, 
+estos se vean desenfocados (efecto blur). */
+.redes_container ul:hover a {
+  filter: blur(2px);
+}
+
+/* Esto hace el efecto de que al posar el cursor sobre uno de los íconos de redes sociales, 
+éste se destaque en tamaño y no esté desenfocado como los íconos restantes. */
+.redes_container ul li a:hover {
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, .4);
+  filter: none;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Aquí hacemos uso de las variables con los colores para cada red social,  
+aplicándola al ícono correspondiente a cada una. De manera que al pasar el cursor sobre el elemento, 
+éste se destaque cambiando de tamaño y de color sin difuminarse. */
+.redes_container ul li .facebook:hover {
+  background: var(--facebook);
+}
+
+.redes_container ul li .instagram:hover {
+  background: var(--instagram);
+}
+
+.redes_container ul li .linkedIn:hover {
+  background: var(--linkedIn);
+}
+
+.redes_container ul li .github:hover {
+  background: var(--github);
+}
+
+/* Para poner despues a datos basicos, intereses y experiencia. */
+.navmap-list-title-bancoDeDados {
+  color: #EC6E5A;
+  border-left: 4px solid #EC6E5A;
+}
+
+.navmap-list-title-framework {
+  color: #AD85BF;
+  border-left: 4px solid #AD85BF;
+}
+
+.navmap-list-title-frontend {
+  color: #5EC6F3;
+  border-left: 4px solid #5EC6F3;
+}
+
+.navmap-list-title-backend {
+  color: #25D285;
+  border-left: 4px solid #25D285;
+}
+
+/* Estilos para dispositivos móviles y pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  body {
+      font-size: 14px;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Ajusta el tamaño de los botones de opción */
+  .opcion {
+      width: 60px;
+      height: 60px;
+      font-size: 10px;
+  }
+
+  /* Ajusta los márgenes de las opciones */
+  .opciones-juego {
+      margin-top: 10px;
+  }
+
+  /* Ajusta el tamaño de fuente de los marcadores de puntos */
+  #puntos-jugador,
+  #puntos-pc {
+      font-size: 16px;
   }
 }
