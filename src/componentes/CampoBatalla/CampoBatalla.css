@@ -1,0 +1,41 @@
+/* Estilos para el componente CampoBatalla */
+.campo-batalla {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente */
+  padding: 10px; /* Espaciado interior */
+  border: 2px solid #333; /* Borde para el campo de batalla */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+.ataque img {
+  max-width: 100px; /* Ancho máximo para las imágenes de elección */
+  border-radius: 50%; /* Hace las imágenes redondas */
+  transition: transform 0.2s; /* Transición de agrandar al pasar el cursor */
+}
+
+/* Estilos para el "VS" */
+.versus {
+  font-size: 24px; /* Tamaño del texto "VS" */
+  margin: 0 20px; /* Margen horizontal para separar "VS" de las imágenes */
+}
+
+/* Estilo para ocultar el campo de batalla cuando no está activo */
+.campo-batalla.disabled {
+  display: none;
+}
+
+/* Estilo para las imágenes en el campo de batalla */
+.campo-batalla img {
+  border-radius: 50%; /* Aplica bordes redondos al 50% para hacer las imágenes redondas */
+  width: 100px; /* Ajusta el ancho deseado */
+  height: 100px; /* Ajusta la altura deseada */
+  transform: scale(1.5); /* Escala las imágenes al 150% de su tamaño original */
+  outline: none; /* Elimina el borde predeterminado del enfoque */
+}
+
+.hidden {
+  display: none;
+}
+
+
