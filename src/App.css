@@ -204,6 +204,7 @@ márgenes, borde redondeado, tamaño de la fuente y cambio de estilo de cursor. 
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
+  outline: none !important; 
 }
 
 .btn:hover {
