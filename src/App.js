@@ -11,20 +11,25 @@ import './App.css';
 
 function App() {
   const [nombreIngresado, setNombreIngresado] = useState(false);
+  const [puntosJugador, setPuntosJugador] = useState(0);
+  const [puntosPC, setPuntosPC] = useState(0);
+  const [eleccionJugador, setEleccionJugador] = useState('');
+  const [eleccionPC, setEleccionPC] = useState('');
+  const [juegoComenzado, setJuegoComenzado] = useState(false);
+
   const [mostrarError, setMostrarError] = useState(false);
   const [error, setError] = useState('');
   const [jugador, setJugador] = useState('');
-  const [eleccionJugador, setEleccionJugador] = useState('');
-  const [eleccionPC, setEleccionPC] = useState('');
-  const [puntosJugador, setPuntosJugador] = useState(0);
-  const [puntosPC, setPuntosPC] = useState(0);
+
+  const [campoBatallaVisible, setCampoBatallaVisible] = useState(true);
+  const [resultadoVisible, setResultadoVisible] = useState(true);
 
   const [mensajeResultado, setMensajeResultado] = useState(''); // Agregamos el estado para el mensaje de resultado
 
   useEffect(() => {
     if (!nombreIngresado) {
       const nombreJugador = window.prompt('Bienvenido jugador! Por favor, ingresa tu nombre:');
-      if (nombreJugador === null || nombreJugador.trim() === '' || !isNaN(nombreJugador)) {
+      if ((nombreJugador === null) || (nombreJugador.trim() === '') || (!isNaN(nombreJugador))) {
         setError('No has introducido tu nombre! Por favor, ingresa un nombre válido.');
         setMostrarError(true);
       } else {
@@ -63,17 +68,25 @@ function App() {
     // Actualizar el estado con la elección de la computadora y el resultado
     setEleccionPC(eleccionComputadora);
     setMensajeResultado(resultado); // Actualizar el mensaje de resultado
+    setCampoBatallaVisible(true); // Mostrar el campo de batalla nuevamente después de una elección
+    setResultadoVisible(true); // Mostrar el resultado nuevamente después de una elección
+    setJuegoComenzado(true); // Actualizar el estado para indicar que el juego ha comenzado
   };
-
 
   const reiniciarJuego = () => {
     setJugador('');
     setEleccionJugador('');
     setEleccionPC('');
-    setMensajeResultado(''); // Restablecer el mensaje de resultado
+    setMensajeResultado('');
     setPuntosJugador(0);
     setPuntosPC(0);
+  
+    // Oculta el campo de batalla y el resultado al reiniciar el juego
+    setCampoBatallaVisible(false);
+    setResultadoVisible(false);
+    setJuegoComenzado(false); // Asegúrate de reiniciar el juego estableciendo juegoComenzado en false
   };
+  
 
   return (
     <>
@@ -91,18 +104,24 @@ function App() {
           eleccionJugador={eleccionJugador}
           eleccionPC={eleccionPC}
           resultado={mensajeResultado} // Usamos el mensaje de resultado actualizado
+          juegoComenzado={juegoComenzado} // Pasa el estado que indica si el juego ha comenzado
+          campoBatallaVisible={campoBatallaVisible} /* Pasa el estado de visibilidad */
         />
+
         <Subtitulo />
         <EleccionJugador
           onEleccion={handleEleccion}
           setEleccionJugador={setEleccionJugador}
           setEleccionPC={setEleccionPC}
+          setJuegoComenzado={setJuegoComenzado} // Pasa la función para indicar que el juego ha comenzado
         />
         <Resultado
           resultado={mensajeResultado}
           eleccionJugador={eleccionJugador}
           eleccionPC={eleccionPC}
-          setMensajeResultado={setMensajeResultado} 
+          setMensajeResultado={setMensajeResultado}
+          juegoComenzado={juegoComenzado} // Pasa el estado que indica si el juego ha comenzado
+          resultadoVisible={resultadoVisible} // Pasa el estado de visibilidad
         />
 
         <BtnReinicio reiniciarJuego={reiniciarJuego} />
@@ -115,6 +134,5 @@ function App() {
 }
 
 export default App;
-
 
 
