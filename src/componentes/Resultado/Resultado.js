@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 
 function Resultado({ resultado, eleccionJugador, eleccionPC, setMensajeResultado, juegoComenzado }) {
   useEffect(() => {
-    // Lógica para determinar el resultado aquí
+    // Esta función se ejecuta cuando cambia la elección del jugador o la PC
+    // Calcula el resultado del juego y actualiza el mensaje
+
     let mensaje = '';
+
+    // Compara las elecciones del jugador y la PC para determinar el resultado
     if (eleccionJugador === eleccionPC) {
       mensaje = 'Empate! 😮';
     } else if (
@@ -16,7 +20,7 @@ function Resultado({ resultado, eleccionJugador, eleccionPC, setMensajeResultado
       mensaje = 'La computadora ganó un punto! 😕';
     }
 
-    // Actualizar el mensaje en el estado
+    // Actualizar el mensaje en el estado de la aplicación
     setMensajeResultado(mensaje);
   }, [eleccionJugador, eleccionPC, setMensajeResultado]);
 
