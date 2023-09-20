@@ -130,7 +130,8 @@ contenido al centro y aplico un borde de color redondeado. */
 
 .img-ataque {
   border-radius: 3rem;
-  transition: transform 0.3s ease-in-out; /* Agrega una transición suave a la propiedad transform */
+  transition: transform 0.3s ease-in-out;
+  /* Agrega una transición suave a la propiedad transform */
 }
 
 /* Aplica tamaño de fuente, grosor, margen y centra el título de opciones. */
@@ -204,7 +205,7 @@ márgenes, borde redondeado, tamaño de la fuente y cambio de estilo de cursor. 
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
-  outline: none !important; 
+  outline: none !important;
 }
 
 .btn:hover {
@@ -319,24 +320,24 @@ aplicándola al ícono correspondiente a cada una. De manera que al pasar el cur
 /* Estilos para dispositivos móviles y pantallas pequeñas */
 @media screen and (max-width: 768px) {
   body {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   /* Ajusta el tamaño de los botones de opción */
   .opcion {
-      width: 60px;
-      height: 60px;
-      font-size: 10px;
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
   }
 
   /* Ajusta los márgenes de las opciones */
   .opciones-juego {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   /* Ajusta el tamaño de fuente de los marcadores de puntos */
   #puntos-jugador,
   #puntos-pc {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
