@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Juego de Piedra, Papel o Tijera
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es un juego simple de "Piedra, Papel o Tijera" implementado como una aplicación web utilizando React. El objetivo del juego es vencer a la computadora seleccionando una de las tres opciones y ganar el mayor número de rondas posibles.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- Juega al clásico juego de "Piedra, Papel o Tijera" contra la computadora.
+- Registra tu nombre como jugador para personalizar la experiencia.
+- Sigue el marcador de puntos para ver quién está ganando.
+- Visualiza el resultado de cada ronda y acumula puntos.
+- Reinicia el juego en cualquier momento.
+- El juego sigue la regla de "el mejor de 5 intentos" para determinar al ganador.
 
-### `npm start`
+## Instalación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clona este repositorio en tu máquina local usando Git:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```
+   bash
+   git clone https://github.com/tu-usuario/piedra-papel-tijera-react.git
+   ```
 
-### `npm test`
+2. Navega hasta el directorio del proyecto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```
+    cd piedra-papel-tijera-react
 
-### `npm run build`
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Instala las dependencias del proyecto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```
+    npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```
 
-### `npm run eject`
+4. Inicia la aplicación:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```
+    npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Abre tu navegador web y visita http://localhost:3000 para jugar al juego.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Uso
+- Ingresa tu nombre y comienza el juego haciendo clic en una de las opciones: Piedra, Papel o Tijera.
+- Observa el resultado de cada ronda y acumula puntos para determinar al ganador.
+- Reinicia el juego en cualquier momento haciendo clic en el botón "Reiniciar Juego".
 
-## Learn More
+## Tecnologías Utilizadas
+- React: Para crear la interfaz de usuario y gestionar el estado del juego.
+- Styled Components: Para aplicar estilos CSS a los componentes de manera organizada.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contribuir
+_Si deseas contribuir a este proyecto, ¡serás bienvenido! Puedes abrir problemas (issues) o enviar solicitudes de extracción (pull requests) para mejorar el juego o corregir errores._
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+¡Diviértete jugando "Piedra, Papel o Tijera" y gracias por utilizar esta aplicación!
 
-### Code Splitting
+Creado por [Magda Ichida]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
